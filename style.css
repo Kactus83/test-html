@@ -2,11 +2,13 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100vh; 
     background-image: url("./ressources/bg-pattern.png");
     background-repeat: repeat;
     font-family: 'Arial', sans-serif;
-    padding-top: 100px;  
-    padding-bottom: 70px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 header, nav, footer {
@@ -18,7 +20,6 @@ header, nav, footer {
 }
 
 header, footer {
-    background-color: #222;
     position: fixed;
     left: 0;
     right: 0;
@@ -26,32 +27,43 @@ header, footer {
 }
 
 header {
+    background-color: #222;
     top: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-logo {
-    max-width: 150px;  
-    height: auto;    
-    display: block;   
-    margin-left: auto;  
+    position: fixed;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; 
+    margin-left: auto;
     margin-right: auto;
 }
 
-
-footer {
-    bottom: 0;
-    color: #f6cd00;
+.big-logo {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav {
+    position: fixed;
     background-color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
+    top: 100px;
 }
 
-.nav-button {
+.nav-button, .enter-button {
     background-color: #333;
     border: none;
     color: white;
@@ -71,7 +83,13 @@ nav {
     background-image: linear-gradient(45deg, #ffb300, #f6cd00);
 }
 
-.nav-button:hover {
+.enter-button {    
+    margin-top: 75px;
+    padding: 20px 40px; 
+    font-size: 20px; 
+}
+
+.nav-button:hover, .enter-button:hover {
     background-image: linear-gradient(45deg, #f6cd00, #ffb300);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
@@ -79,4 +97,25 @@ nav {
 #mainSection {
     background-color: transparent;
     color: #f6cd00;
+    text-align: center;
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+}
+
+footer {
+    position: fixed;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, #222 30%, #222 100%);
+    color: #f6cd00;
+    padding: 10px 0;
+    text-align: center;
 }
