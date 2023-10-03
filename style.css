@@ -66,6 +66,10 @@ header, nav, footer {
     box-sizing: border-box;
 }
 
+nav:hover {
+    background-color: #1b1b1b;
+}
+
 header, footer {
     position: fixed;
     left: 0;
