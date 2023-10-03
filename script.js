@@ -31,6 +31,9 @@ function lancerConfettis(callback) {
 
 
 function onEnterButtonClick() {
+    const enterButton = document.querySelector('.enter-button');
+    enterButton.style.visibility = 'hidden';
+
     lancerConfettis(function() {
         location.href = './pages/home/home.html';
     });
