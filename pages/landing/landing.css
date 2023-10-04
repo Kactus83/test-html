@@ -60,3 +60,45 @@
     font-size: 30px;
     margin-bottom: 0;
 }
+
+
+/*
+*   Animation Confettis
+*/
+
+
+
+@keyframes fall {
+    to {
+        transform: translateY(calc(100vh - 10px));
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spreadOut {
+    0% {
+        opacity: 1;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 0, 0, 0.8);
+    animation: fall 5s linear forwards, spin 5s infinite linear, spreadOut 0.5s forwards;
+    opacity: 0;
+}
