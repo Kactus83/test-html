@@ -1,0 +1,21 @@
+#landingSection {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.big-logo-area {
+    width: 50%;
+    height: auto;
+}
+
+.primary-color-filled {
+    fill: var(--primary-color);
+}
+
+.secondary-color-filled {
+    fill: var(--secondary-color);
+}

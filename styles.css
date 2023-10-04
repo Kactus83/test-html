@@ -1,0 +1,60 @@
+:root {
+    --background-color: #222;
+    --background-secondary-color: #2b2b2b;
+    --background-pattern: url("./assets/bg-pattern.png");
+    --primary-color: #f6cd00;
+    --secondary-color: #ffb300;
+    --button-color: #333;
+    /* Other themes variables */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; 
+    background-color: var(--background-color);
+    background-image: var(--background-pattern);
+    background-repeat: repeat;
+}
+
+header, nav, footer {
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid var(--primary-color);
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;  
+}
+
+header {
+    background-color: var(--background-color);
+    top: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    position: fixed;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    top: 100px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, var(--background-color) 30%, var(--background-color) 100%);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.footer-text {
+    margin-bottom: 0px;
+}
