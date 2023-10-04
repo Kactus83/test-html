@@ -2,8 +2,9 @@
     --background-color: #222;
     --background-secondary-color: #2b2b2b;
     --background-pattern: url("./assets/bg-pattern.png");
-    --primary-color: #f6cd00;
-    --secondary-color: #ffb300;
+    --primary-color: #ffc800;
+    --primary-color-accent: #f6cd00;
+    --secondary-color: #f69400;
     --text-color: #fff;
     --button-color: #333;
     /* Other themes variables */
@@ -58,7 +59,7 @@ footer {
 }
 
 h1 {
-    color: var(--primary-color);
+    color: var(--primary-color-accent);
 }
 
 p {

@@ -21,11 +21,11 @@
 }
 
 .primary-color-filled {
-    fill: var(--primary-color);
+    fill: var(--primary-color-accent);
 }
 
 .secondary-color-filled {
-    fill: var(--secondary-color);
+    fill: var(--primary-color);
 }
 
 .enter-button {
@@ -56,7 +56,7 @@
 }
 
 .landing-area-title {
-    color: var(--primary-color);
+    color: var(--primary-color-accent);
     font-size: 30px;
     margin-bottom: 0;
 }
