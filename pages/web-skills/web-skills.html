@@ -64,16 +64,21 @@
         <section id="web-skillsSection">
             <div class="skill-card">
                 <h2>CSS Theming</h2>
-                <p>Explication rapide de ce qu'est le CSS Theming...</p>
-                <button class="btn-show-settings" onclick="toggleSettings('settings1')">Voir les paramètres</button>
+                <p>You can change the portfolio's look here. Give a try !</p>
+                <button class="btn-show-settings" onclick="toggleSettings('theme-settings-panel')">Voir les paramètres</button>
                 
-                <div class="settings-area" id="settings1">
-                    <button class="btn-close-settings" onclick="toggleSettings('settings1')">X</button>
-                    <button data-theme="yellow">Yellow</button>
-                    <button data-theme="green">Green</button>
-                    <button data-theme="blue">Blue</button>
-                    <button data-theme="red">Red</button>
-                    <button data-theme="purple">Purple</button>                    
+                <div class="theme-settings-area" id="theme-settings-panel">
+                    <button class="btn-close-settings" onclick="toggleSettings('theme-settings-panel')">X</button> 
+                    <div>
+                        <h2>- Select your favorite color -</h2>
+                    </div>
+                    <div>
+                        <button class="yellow-theme" data-theme="yellow-theme">Yellow</button>
+                        <button class="green-theme" data-theme="green-theme">Green</button>
+                        <button class="blue-theme" data-theme="blue-theme">Blue</button>
+                        <button class="red-theme" data-theme="red-theme">Red</button>
+                        <button class="purple-theme" data-theme="purple-theme">Purple</button> 
+                    </div>                  
                 </div>
             </div>
         </section>

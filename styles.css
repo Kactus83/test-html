@@ -15,8 +15,7 @@
 }
 
 /* Yellow theme as default theme */
-.yellow-theme,
-body {
+.yellow-theme {
     --primary-color: #ffc800;
     --primary-color-accent: #f6cd00;
     --secondary-color: #f69400;
@@ -90,7 +89,6 @@ header {
 }
 
 nav {
-    position: fixed;
     background-color: var(--background-color);
     display: flex;
     justify-content: center;
@@ -108,7 +106,7 @@ footer {
     text-align: center;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color-accent);
 }
 
@@ -151,4 +149,32 @@ p {
 
 .secondary-color-filled {
     fill: var(--primary-color);
+}
+
+
+button {
+    background-color: var(--background-secondary-color);
+    color: var(--text-color);
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    padding: 10px 20px;
+    margin: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.3s, color 0.5s, border-image-source 0.5s;
+    outline: none;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-secondary-color);
+    border-image-source: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
 }

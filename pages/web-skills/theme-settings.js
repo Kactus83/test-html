@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const themeName = e.currentTarget.getAttribute('data-theme');
             changeTheme(themeName);
             localStorage.setItem('theme', themeName);
-            console.log("theme stored");
         });
     });
 });
@@ -12,5 +11,4 @@ document.addEventListener('DOMContentLoaded', () => {
 function changeTheme(themeName) {
     const root = document.documentElement;
     root.className = themeName;
-    console.log("theme updated");
 }

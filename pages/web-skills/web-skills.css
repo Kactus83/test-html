@@ -1,5 +1,6 @@
 #web-skillsSection {
     width: 80%;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,10 +10,22 @@
 
 .skill-card {
     width: 30%;
+    margin: 10px;
+    padding: 10px;
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid;
+    border-color: var(--background-color);
 }
 
-.settings-area {
+.skill-card:hover {
+    border-color: var(--secondary-color);
+}
+
+.theme-settings-area {
     display: none;
     position: fixed;
     top: 0;
@@ -21,6 +34,7 @@
     height: 100%;
     background: var(--background-color);
     z-index: 1100;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;

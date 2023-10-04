@@ -6,5 +6,4 @@ document.addEventListener('DOMContentLoaded', () => {
 function applyTheme(themeName) {
     const root = document.documentElement;
     root.className = themeName;
-    console.log("theme updated");
 }
