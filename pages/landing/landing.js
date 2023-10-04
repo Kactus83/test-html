@@ -35,7 +35,7 @@ function onEnterButtonClick() {
     enterButton.style.visibility = 'hidden';
 
     lancerConfettis(function() {
-        location.href = './pages/home/home.html';
+        location.href = '../home/home.html';
     });
 }
 

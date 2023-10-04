@@ -20,14 +20,6 @@
     align-items: center;
 }
 
-.primary-color-filled {
-    fill: var(--primary-color-accent);
-}
-
-.secondary-color-filled {
-    fill: var(--primary-color);
-}
-
 .enter-button {
     background-color: var(--background-secondary-color);
     color: var(--text-color);
