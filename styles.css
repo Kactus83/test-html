@@ -4,6 +4,7 @@
     --background-pattern: url("./assets/bg-pattern.png");
     --primary-color: #f6cd00;
     --secondary-color: #ffb300;
+    --text-color: #fff;
     --button-color: #333;
     /* Other themes variables */
 }
@@ -16,6 +17,7 @@ body {
     background-color: var(--background-color);
     background-image: var(--background-pattern);
     background-repeat: repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header, nav, footer {
@@ -53,6 +55,14 @@ footer {
     background-image: linear-gradient(to bottom, transparent 0%, var(--background-color) 30%, var(--background-color) 100%);
     color: var(--primary-color);
     text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+p {
+    color: var(--primary-color);
 }
 
 .footer-text {
