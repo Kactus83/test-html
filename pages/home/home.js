@@ -46,11 +46,11 @@ function showBox() {
           
         }, { once: true }); // L'eventListener se retire automatiquement après être exécuté une fois
         
-      }, 500 + 2500); // temps avant que la box disparaisse après le texte (+2000 pour laisser la transition se terminer)
+      }, 200 + 1500); // temps avant que la box disparaisse après le texte (+2000 pour laisser la transition se terminer)
 
-    }, 2500); // temps avant que le texte disparaisse
+    }, 2000); // temps avant que le texte disparaisse
 
-  }, 1500); // temps avant que le texte apparaisse
+  }, 500); // temps avant que le texte apparaisse
 }
 
 // Démarrer l'animation
