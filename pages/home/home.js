@@ -69,7 +69,7 @@ function showFinalBox() {
   // Déclenchez l'animation du SVG après un certain délai
   setTimeout(() => {
     hugeLogo.classList.add('animate');
-  }, 2000); // Remplacez 2000 (2s) par le délai souhaité
+  }, 100); 
 }
 
 

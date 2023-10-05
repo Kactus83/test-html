@@ -12,14 +12,15 @@ function applyTheme(themeName) {
     cursor.style.top = e.pageY + 'px';
 });
 
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        console.log('Button hovered!');
+document.querySelectorAll('button, .column-child-block, .skill-card').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        console.log('Element hovered!');
         document.getElementById('cursor').classList.add('clickable-hover');
     });
-    button.addEventListener('mouseleave', () => {
-        console.log('Button unhovered!');
+    element.addEventListener('mouseleave', () => {
+        console.log('Element unhovered!');
         document.getElementById('cursor').classList.remove('clickable-hover');
     });
 });
+
 
