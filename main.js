@@ -12,7 +12,7 @@ function applyTheme(themeName) {
     cursor.style.top = e.pageY + 'px';
 });
 
-document.querySelectorAll('button, .column-child-block, .skill-card').forEach(element => {
+document.querySelectorAll('button, .column-child-block, .skill-card, .animation-box').forEach(element => {
     element.addEventListener('mouseenter', () => {
         console.log('Element hovered!');
         document.getElementById('cursor').classList.add('clickable-hover');

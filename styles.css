@@ -23,23 +23,23 @@
 
 /* Green theme */
 .green-theme {
-    --primary-color: #66bb6a;
-    --primary-color-accent: #4caf50;
+    --primary-color: #35aa3b;
+    --primary-color-accent: #2dc932;
     --secondary-color: #2e7d32;
 }
 
 /* Blue theme */
 .blue-theme {
-    --primary-color: #1e88e5;
+    --primary-color: #1c76c6;
     --primary-color-accent: #1976d2;
     --secondary-color: #0d47a1;
 }
 
 /* Red theme */
 .red-theme {
-    --primary-color: #ef5350;
-    --primary-color-accent: #d32f2f;
-    --secondary-color: #b71c1c;
+    --primary-color: #bd1e1c;
+    --primary-color-accent: #e61616;
+    --secondary-color: #8a1a1a;
 }
 
 /* Purple theme */
