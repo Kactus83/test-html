@@ -134,10 +134,6 @@ body {
 * SVG Fill Styles
 */
 
-/* 
-* SVG Fill Styles
-*/
-
 .primary-color-filled,
 .secondary-color-filled {
     transition: fill 0.3s ease-in-out; 
@@ -211,8 +207,13 @@ footer {
 }
 
 /* 
-* Header Elements Styles
+* Logo Styles
 */
+
+.header-logo,
+.huge-logo {
+    transition: filter 0.3s ease-in-out; 
+}
 
 .header-logo {
     margin-top: -40px;
@@ -220,11 +221,29 @@ footer {
     width: auto;
 }
 
+.header-logo:hover {
+    animation: haloEffect 1.5s infinite alternate; 
+}
+
 .huge-logo {
     height: 60%;
     width: auto;
     pointer-events: none;
 }
+
+.huge-logo:hover {
+    animation: haloEffect 1.5s infinite alternate; 
+}
+
+@keyframes haloEffect {
+    0% {
+        filter: drop-shadow(0 0 20px transparent); 
+    }
+    100% {
+        filter: drop-shadow(0 0 20px var(--secondary-color)); 
+    }
+}
+
 
 @keyframes animateLogo {
     0% {
