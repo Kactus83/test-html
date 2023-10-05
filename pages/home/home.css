@@ -3,16 +3,6 @@
 */
 
 /* 
-* Hidden Util Class
-*/
-
-.hidden {
-  display: none; 
-  opacity: 0;
-  transition: opacity 2s ease-in-out; 
-}
-
-/* 
 * Home Section Styling
 */
 
@@ -104,5 +94,16 @@
 .text {
   opacity: 0; 
   font-size: 20px;
+  transition: opacity 2s ease-in-out; 
+}
+
+
+/* 
+* Hidden Util Class
+*/
+
+.hidden {
+  display: none; 
+  opacity: 0;
   transition: opacity 2s ease-in-out; 
 }
