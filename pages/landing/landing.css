@@ -30,6 +30,7 @@
     margin-top: 35px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.5s, transform 0.3s, color 0.5s, border-image-source 0.5s;
@@ -49,8 +50,18 @@
 
 .landing-area-title {
     color: var(--primary-color-accent);
-    font-size: 30px;
+    font-size: 75px;
+    letter-spacing: 5px;
     margin-bottom: 0;
+}
+
+.landing-area-text {
+    color: var(--background-color);
+    text-transform: uppercase;
+    background-color: var(--primary-color-accent);
+    font-size: 23px;
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 
