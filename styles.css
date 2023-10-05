@@ -145,6 +145,7 @@ body {
 }
 
 .primary-color-filled:hover {
+    animation: haloEffect 1s;
     animation: colorChangePrimary 1.5s infinite alternate; 
 }
 
@@ -168,6 +169,7 @@ body {
 }
 
 .secondary-color-filled:hover {
+    animation: haloEffect 1s;
     animation: colorChangeSecondary 1.5s infinite alternate; 
 }
 
