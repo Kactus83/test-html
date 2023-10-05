@@ -56,6 +56,7 @@
             </svg>
         </header>
 
+        <!-- Navigation -->
         <nav>
             <button class="nav-button" onclick="location.href='../landing/landing.html'">Intro</button>
             <button class="nav-button" onclick="location.href='../home/home.html'">Home</button>
@@ -69,9 +70,12 @@
             <div class="skill-card">
                 <h2>CSS Dynamic Themes</h2>
                 <p>You can change the portfolio's look here. <br> Give a try !</p>
+                <!-- Overlay toogle (ON) -->
                 <button class="btn-show-settings" onclick="toggleSettings('theme-settings-panel')">Show settings</button>
                 
+                <!-- Fullscreen overlay Hidden by default -->
                 <div class="theme-settings-area" id="theme-settings-panel">
+                    <!-- Overlay toogle (OFF) -->
                     <button class="btn-close-settings" onclick="toggleSettings('theme-settings-panel')">X</button> 
                     <div>
                         <h2>- Select your favorite color -</h2>
@@ -90,9 +94,12 @@
             <div class="skill-card">
                 <h2>Animations</h2>
                 <p>Some CSS animations</p>
+                <!-- Overlay toogle (ON) -->
                 <button class="btn-show-settings" onclick="toggleSettings('animations-panel')">Show animations</button>
                 
+                <!-- Fullscreen overlay Hidden by default -->
                 <div class="animations-area" id="animations-panel">
+                    <!-- Overlay toogle (OFF) -->
                     <button class="btn-close-settings" onclick="toggleSettings('animations-panel')">X</button> 
                     <div class="animation-master-flexbox">
                         <div>
@@ -113,9 +120,13 @@
             <div class="skill-card">
                 <h2>Github</h2>
                 <p>Links to Github projects</p>
+
+                <!-- Overlay toogle -->
                 <button class="btn-show-settings" onclick="toggleSettings('github-panel')">Show projects</button>
                 
+                <!-- Fullscreen overlay Hidden by default -->
                 <div class="github-area" id="github-panel">
+                    <!-- Overlay toogle (OFF) -->
                     <button class="btn-close-settings" onclick="toggleSettings('github-panel')">X</button> 
                     <div>
                         <h2>- Github projects -</h2>
