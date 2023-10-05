@@ -14,7 +14,13 @@
     --button-color: #333;
 }
 
+/* Theme Customization */
 /* Yellow theme as default theme */
+.yellow-theme, .green-theme, .blue-theme, .red-theme, .purple-theme {
+    --text-color: #fff;
+    /* These styles apply for all themes */
+}
+
 .yellow-theme {
     --primary-color: #ffc800;
     --primary-color-accent: #f6cd00;
@@ -49,46 +55,48 @@
     --secondary-color: #4a148c;
 }
 
-/* Personnalisation de la scrollbar */
+/* 
+* Scrollbar Customization
+*/
+
+/* For Webkit browsers like Chrome/Safari */
 ::-webkit-scrollbar {
     width: 12px; 
 }
-
 ::-webkit-scrollbar-track {
     background-color: var(--background-secondary-color); 
     border-radius: 10px; 
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: var(--primary-color); 
     border-radius: 10px; 
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--primary-color-accent); 
 }
 
-/* Pour Internet Explorer et Edge */
+/* For Internet Explorer and Edge */
 body::-ms-scrollbar {
     width: 12px;
 }
-
 body::-ms-scrollbar-track {
     background-color: var(--background-secondary-color);
 }
-
 body::-ms-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 10px;
 }
-
 body::-ms-scrollbar-thumb:hover {
     background-color: var(--primary-color-accent);
 }
 
 /* 
-* Main classes
+* Body and Global Styles
 */
+
+body, a, button {
+    cursor: none;
+}
 
 body {
     margin: 0;
@@ -101,9 +109,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body, a, button {
-    cursor: none;
-}
+/* 
+* Cursor Styles
+*/
 
 #cursor {
     width: 20px;
@@ -121,6 +129,23 @@ body, a, button {
     transform: translate(-50%, -50%) scale(0.50); 
     background-color: var(--primary-color-accent); 
 }
+
+/* 
+* SVG Fill Styles
+*/
+
+
+.primary-color-filled {
+    fill: var(--primary-color-accent);
+}
+
+.secondary-color-filled {
+    fill: var(--primary-color);
+}
+
+/* 
+* Header, Navigation and Footer Styles
+*/
 
 header, nav, footer {
     padding: 20px;
@@ -140,11 +165,34 @@ header {
     justify-content: center;
 }
 
+nav {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    top: 100px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, var(--background-color) 30%, var(--background-color) 100%);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* 
+* Header Elements Styles
+*/
+
 .header-logo {
     margin-top: -40px;
     height: 100px;
     width: auto;
 }
+
 .huge-logo {
     height: 60%;
     width: auto;
@@ -179,24 +227,9 @@ header {
     animation: animateLogo 4s forwards;
 }
 
-
-nav {
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    top: 100px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-image: linear-gradient(to bottom, transparent 0%, var(--background-color) 30%, var(--background-color) 100%);
-    color: var(--primary-color);
-    text-align: center;
-}
+/* 
+* Text Elements Styles
+*/
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color-accent);
@@ -210,8 +243,16 @@ p {
     margin-bottom: 0px;
 }
 
+/* 
+* Button Styles
+*/
+
+.nav-button, .current-nav-button, button {
+    /* Common button styles if needed */
+}
+
 .nav-button, .current-nav-button {
-    background-color: #333;
+    background-color: var(--background-color);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -242,15 +283,6 @@ p {
     background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
-
-.primary-color-filled {
-    fill: var(--primary-color-accent);
-}
-
-.secondary-color-filled {
-    fill: var(--primary-color);
-}
-
 
 button {
     background-color: var(--background-secondary-color);
