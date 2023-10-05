@@ -134,14 +134,41 @@ body {
 * SVG Fill Styles
 */
 
+/* 
+* SVG Fill Styles
+*/
+
+.primary-color-filled,
+.secondary-color-filled {
+    transition: fill 0.3s ease-in-out; 
+}
 
 .primary-color-filled {
     fill: var(--primary-color-accent);
 }
 
+.primary-color-filled:hover {
+    animation: colorChangePrimary 1.5s infinite alternate; 
+}
+
+@keyframes colorChangePrimary {
+    0% { fill: var(--primary-color-accent); }
+    100% { fill: var(--primary-color); }
+}
+
 .secondary-color-filled {
     fill: var(--primary-color);
 }
+
+.secondary-color-filled:hover {
+    animation: colorChangeSecondary 1.5s infinite alternate; 
+}
+
+@keyframes colorChangeSecondary {
+    0% { fill: var(--primary-color); }
+    100% { fill: var(--secondary-color); }
+}
+
 
 /* 
 * Header, Navigation and Footer Styles
