@@ -1,5 +1,9 @@
 function toggleSettings(id) {
     const settingsArea = document.getElementById(id);
+    if(settingsArea.style.display != 'none' && settingsArea.style.display != 'flex' ) {
+        settingsArea.style.display = 'flex';
+        return;  
+    }
     settingsArea.style.display = settingsArea.style.display === 'none' ? 'flex' : 'none';
 }
 

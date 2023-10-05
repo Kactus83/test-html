@@ -26,7 +26,6 @@
 }
 
 .theme-settings-area, .animations-area, .github-area {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,6 +37,10 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+#theme-settings-panel, #animations-panel, #github-panel {
+    display: none;
 }
 
 #myCanvas {
