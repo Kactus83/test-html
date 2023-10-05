@@ -69,18 +69,23 @@ function showBox() {
 function showFinalBox() {
   const finalBox = document.querySelector('.final-box');
   const hugeLogo = document.querySelector('.huge-logo');
+  const nav = document.querySelector('nav'); 
   
   finalBox.classList.remove('hidden');
 
   requestAnimationFrame(() => {
-    finalBox.style.opacity = '1';
+      finalBox.style.opacity = '1';
   });
 
-  // Déclenchez l'animation du SVG après un certain délai
   setTimeout(() => {
-    hugeLogo.classList.add('animate');
-  }, 100); 
+      hugeLogo.classList.add('animate');
+  }, 100);
+
+  setTimeout(() => {
+      nav.classList.add('visible');
+  }, 4000); 
 }
+
 
 
 // Démarrer l'animation

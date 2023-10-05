@@ -2,6 +2,20 @@
 * Themes Variables are defined in styles.css
 */
 
+/* CSS override to hide nav on start */
+nav {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* To handle nav after animations */
+nav.visible {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
 /* 
 * Home Section Styling
 */
