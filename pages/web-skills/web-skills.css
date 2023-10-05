@@ -25,7 +25,7 @@
     border-color: var(--secondary-color);
 }
 
-.theme-settings-area {
+.theme-settings-area, .animations-area, .github-area {
     display: none;
     position: fixed;
     top: 0;

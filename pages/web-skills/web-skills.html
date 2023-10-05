@@ -60,12 +60,14 @@
             <button class="nav-button" onclick="location.href='../cv/cv.html'">CV</button>
             <button class="nav-button" onclick="location.href='../web-skills/web-skills.html'">Web Skills</button>
         </nav> 
-
+        
         <section id="web-skillsSection">
+
+            <!-- CSS Theme skill card -->
             <div class="skill-card">
-                <h2>CSS Theming</h2>
-                <p>You can change the portfolio's look here. Give a try !</p>
-                <button class="btn-show-settings" onclick="toggleSettings('theme-settings-panel')">Voir les paramètres</button>
+                <h2>CSS Dynamic Themes</h2>
+                <p>You can change the portfolio's look here. <br> Give a try !</p>
+                <button class="btn-show-settings" onclick="toggleSettings('theme-settings-panel')">Show settings</button>
                 
                 <div class="theme-settings-area" id="theme-settings-panel">
                     <button class="btn-close-settings" onclick="toggleSettings('theme-settings-panel')">X</button> 
@@ -78,6 +80,40 @@
                         <button class="blue-theme" data-theme="blue-theme">Blue</button>
                         <button class="red-theme" data-theme="red-theme">Red</button>
                         <button class="purple-theme" data-theme="purple-theme">Purple</button> 
+                    </div>                  
+                </div>
+            </div>
+
+            <!-- Animations skill card -->
+            <div class="skill-card">
+                <h2>Animations</h2>
+                <p>Some CSS animations</p>
+                <button class="btn-show-settings" onclick="toggleSettings('animations-panel')">Show animations</button>
+                
+                <div class="animations-area" id="animations-panel">
+                    <button class="btn-close-settings" onclick="toggleSettings('animations-panel')">X</button> 
+                    <div>
+                        <h2>- CSS Animations -</h2>
+                    </div>
+                    <div>
+                        <p> TODO: Add animations </p> 
+                    </div>                  
+                </div>
+            </div>
+
+            <!-- Animations skill card -->
+            <div class="skill-card">
+                <h2>Github</h2>
+                <p>Links to Github projects</p>
+                <button class="btn-show-settings" onclick="toggleSettings('github-panel')">Show projects</button>
+                
+                <div class="github-area" id="github-panel">
+                    <button class="btn-close-settings" onclick="toggleSettings('github-panel')">X</button> 
+                    <div>
+                        <h2>- Github projects -</h2>
+                    </div>
+                    <div>
+                        <p> TODO: Add links </p> 
                     </div>                  
                 </div>
             </div>
