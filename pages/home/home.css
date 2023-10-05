@@ -3,6 +3,16 @@
 */
 
 /* 
+* Hidden Util Class
+*/
+
+.hidden {
+  display: none; 
+  opacity: 0;
+  transition: opacity 2s ease-in-out; 
+}
+
+/* 
 * Home Section Styling
 */
 
@@ -16,33 +26,7 @@
 }
 
 /* 
-* Slide Element Styling
-*/
-
-.slide {
-  display: none; /* Initial state hidden */
-  text-align: center;
-  background-color: var(--background-secondary-color);
-  color: var(--text-color);
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 8px;
-  transition: opacity 1s ease-in-out; /* Fade effect */
-}
-
-/* Modifiers for active and inactive slide states */
-
-.slide.active {
-  display: block; /* Visible state */
-  opacity: 1;
-}
-
-.slide.inactive {
-  opacity: 0;
-}
-
-/* 
-* Container Styling
+* Slides Container Styling
 */
 
 #container {
@@ -50,6 +34,34 @@
   display: flex;
   align-items: center;
   padding-top: 3%;
+}
+
+/* 
+* Slide Element Styling
+*/
+
+.slide {
+  display: none; 
+  text-align: center;
+  background-color: var(--background-secondary-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Modifiers for active and inactive slide states */
+
+.slide.active {
+  display: block; 
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.inactive {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 /* 
@@ -84,22 +96,13 @@
   display: flex; 
 }
 
-/* 
-* Hidden Element Styling
-*/
-
-.hidden {
-  display: none; /* Hidden state */
-  opacity: 0;
-  transition: opacity 2s ease-in-out; /* Fade effect */
-}
 
 /* 
-* Text Element Styling
+* Box Text Element Styling
 */
 
 .text {
-  opacity: 0; /* Initial state transparent */
+  opacity: 0; 
   font-size: 20px;
-  transition: opacity 2s ease-in-out; /* Fade effect */
+  transition: opacity 2s ease-in-out; 
 }

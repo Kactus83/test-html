@@ -1,3 +1,11 @@
+/* 
+* Themes Variables are defined in styles.css
+*/
+
+/* 
+* Landing Section Styling
+*/
+
 #landingSection {
     width: 80%;
     display: flex;
@@ -7,10 +15,18 @@
     margin-right: auto;
 }
 
+/* 
+* Big Logo Area Styling
+*/
+
 .big-logo-area {
     width: 50%;
     height: auto;
 }
+
+/* 
+* Landing Text Area Styling
+*/
 
 .landing-text-area {
     width: 70%;
@@ -19,6 +35,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+/* 
+* Enter Button Styling
+*/
 
 .enter-button {
     background-color: var(--background-secondary-color);
@@ -37,7 +57,9 @@
     outline: none;
 }
 
-.enter-button:hover {
+.enter-button:hover,
+.enter-button:active,
+.enter-button:focus {
     background-color: var(--primary-color);
     color: var(--background-secondary-color);
     border-image-source: linear-gradient(to right, var(--primary-color), var(--secondary-color));
@@ -47,6 +69,10 @@
 .enter-button:active {
     transform: scale(0.90);
 }
+
+/* 
+* Landing Area Titles and Texts Styling
+*/
 
 .landing-area-title {
     color: var(--primary-color-accent);
@@ -64,12 +90,9 @@
     margin-top: 5px;
 }
 
-
-/*
-*   Animation Confettis
+/* 
+* Confetti Animation
 */
-
-
 
 @keyframes fall {
     to {
