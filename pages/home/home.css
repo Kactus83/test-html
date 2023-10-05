@@ -6,3 +6,55 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.slide {
+    display: none;
+    text-align: center;
+    background-color: var(--background-secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.slide.inactive {
+    opacity: 0;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 15%;
+  }
+  
+  .box {
+    min-width: 300px;
+    min-height: 200px;
+    background-color: var(--background-color); 
+    margin-bottom: 10px;
+    opacity: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 3s ease-in-out;
+    display: flex; 
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .text {
+    opacity: 0;
+    font-size: 20px;
+    transition: opacity 2s;
+  }
+  
+  
