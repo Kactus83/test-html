@@ -83,6 +83,15 @@
     text-align: center;
     border: 1px solid;
     background-color: transparent;
+    transition: border-color 2s ease;
+}
+
+.column-block:hover {
+    border-color: var(--secondary-color-accent);
+}
+
+.column-block:hover .column-child-block{
+    border-color: var(--secondary-color);
 }
 
 .column-child-block, .column-sub-child-block {
@@ -95,8 +104,13 @@
     align-items: center;
     text-align: center;
     border: 1px solid;
+    transition: border-color 1.5s ease 2s;
     border-color: var(--background-secondary-color);
     background-color: var(--background-secondary-color);
+}
+
+.column-child-block:hover h2 {
+    color: var(--primary-color-super-accent);
 }
 
 .column-sub-child-block {
@@ -110,6 +124,11 @@
     opacity: 1;
     max-height: 500px;
     transition: opacity 0.1s ease, max-height 8s ease;
+}
+
+.column-sub-child-block:hover {
+    border-color: var(--secondary-color-accent);
+    transform: scale(1.04);
 }
 
 .info-list {

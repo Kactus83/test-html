@@ -9,7 +9,9 @@
     --background-pattern: url("./assets/bg-pattern.png");
     --primary-color: #ffc800;
     --primary-color-accent: #f6cd00;
+    --primary-color-super-accent: #ffe600;
     --secondary-color: #f69400;
+    --secondary-color-accent: #cb5b00;
     --text-color: #fff;
     --button-color: #333;
 }
@@ -24,35 +26,45 @@
 .yellow-theme {
     --primary-color: #ffc800;
     --primary-color-accent: #f6cd00;
+    --primary-color-super-accent: #ffe600;
     --secondary-color: #f69400;
+    --secondary-color-accent: #cb5b00;
 }
 
 /* Green theme */
 .green-theme {
     --primary-color: #35aa3b;
     --primary-color-accent: #2dc932;
+    --primary-color-super-accent: #12ec1a;
     --secondary-color: #2e7d32;
+    --secondary-color-accent: #126c16;
 }
 
 /* Blue theme */
 .blue-theme {
     --primary-color: #1c76c6;
     --primary-color-accent: #1976d2;
+    --primary-color-super-accent: #2ab1ff;
     --secondary-color: #0d47a1;
+    --secondary-color-accent: #043886;
 }
 
 /* Red theme */
 .red-theme {
     --primary-color: #bd1e1c;
     --primary-color-accent: #e61616;
+    --primary-color-super-accent: #ff4949;
     --secondary-color: #8a1a1a;
+    --secondary-color-accent: #710b0b;
 }
 
 /* Purple theme */
 .purple-theme {
     --primary-color: #ab47bc;
     --primary-color-accent: #8e24aa;
+    --primary-color-super-accent: #bf29e9;
     --secondary-color: #4a148c;
+    --secondary-color-accent: #3a0877;
 }
 
 /* 
@@ -153,13 +165,13 @@ body {
     0% { fill: var(--primary-color-accent); }
     75% { fill: var(--primary-color); }
     90% { fill: var(--secondary-color); }
-    100% { fill: var(--primary-color-accent); }
+    100% { fill: var(--primary-color-super-accent); }
 }
 
 @keyframes subtleColorChangePrimary {
     0% { fill: var(--primary-color-accent); }
     75% { fill: var(--primary-color); }
-    90% { fill: var(--primary-color-accent); }
+    90% { fill: var(--primary-color-super-accent); }
     100% { fill: var(--primary-color); }
 }
 
@@ -185,7 +197,7 @@ body {
     60% { fill: var(--primary-color); }
     75% { fill: var(--secondary-color); }
     80% { fill: var(--primary-color); }
-    100% { fill: var(--secondary-color); }
+    100% { fill: var(--secondary-color-accent); }
 }
 
 
@@ -340,7 +352,7 @@ p {
 }
 
 .current-nav-button {
-    color: var(--primary-color-accent);
+    color: var(--secondary-color-accent);
 }
 
 .current-nav-button:hover { 
@@ -357,7 +369,7 @@ button {
     color: var(--text-color);
     border: 3px solid;
     border-image-slice: 1;
-    border-image-source: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    border-image-source: linear-gradient(to left, var(--primary-color), var(--secondary-color-accent));
     padding: 10px 20px;
     margin: 20px;
     text-transform: uppercase;
@@ -371,7 +383,7 @@ button {
 button:hover {
     background-color: var(--primary-color);
     color: var(--background-secondary-color);
-    border-image-source: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-image-source: linear-gradient(to right, var(--primary-color-accent), var(--secondary-color));
     transform: scale(1.05);
     cursor: none;
 }
