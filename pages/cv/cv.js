@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function animateRandomBlock() {
-        if(isHovered) return;
+        if(isHovered) {
+            // Si un bloc est survolé, retirez l'animation de tous les blocs
+            blocks.forEach(block => {
+                block.classList.remove('animate-bg');
+            });
+            return;  // Ne continuez pas à ajouter une nouvelle animation
+        }
 
         // Si tous les blocs ont été animés, réinitialiser le tableau
         if(animatedBlocksIndices.length === blocks.length) {
