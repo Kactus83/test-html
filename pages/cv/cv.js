@@ -48,3 +48,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(animateRandomBlock, 5000);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let childBlocks = document.querySelectorAll('.column-child-block');
+
+    childBlocks.forEach(block => {
+        block.addEventListener('mouseenter', () => {
+            let listItems = block.querySelectorAll('.info-list li');
+            listItems.forEach((li, index) => {
+                // Définissez un délai basé sur l'index pour que chaque élément commence à clignoter après le précédent
+                li.style.animationDelay = `${index * 0.333333}s`;
+                li.classList.add('blinking');
+            });
+        });
+
+        block.addEventListener('mouseleave', () => {
+            let listItems = block.querySelectorAll('.info-list li');
+            listItems.forEach(li => {
+                // Réinitialisez le délai d'animation et retirez la classe de clignotement
+                li.style.animationDelay = `0s`;
+                li.classList.remove('blinking');
+            });
+        });
+    });
+});
+

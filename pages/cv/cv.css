@@ -19,6 +19,23 @@
     }
 }
 
+@keyframes blink {
+    0%, 100% {
+        color: var(--primary-color);
+    }
+    50% {
+        color: var(--primary-color--accent);
+    }
+    88% {
+        color: var(--secondary-color);
+    }
+}
+
+.blinking {
+    animation: blink 1s infinite;
+}
+
+
 .animate-bg {
     animation: bgColorFadeInOut 5s infinite;
 }
