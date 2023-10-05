@@ -101,6 +101,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body, a, button {
+    cursor: none;
+}
+
+#cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+    background-color: var(--secondary-color); 
+    transition: transform 0.15s ease, background-color 0.3s ease;
+    z-index: 2000;
+}
+
+#cursor.clickable-hover {
+    transform: translate(-50%, -50%) scale(0.50); 
+    background-color: var(--primary-color-accent); 
+}
+
 header, nav, footer {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -218,8 +239,10 @@ button:hover {
     color: var(--background-secondary-color);
     border-image-source: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     transform: scale(1.05);
+    cursor: none;
 }
 
 button:active {
     transform: scale(0.95);
+    cursor: none;
 }
