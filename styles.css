@@ -145,6 +145,39 @@ header {
     height: 100px;
     width: auto;
 }
+.huge-logo {
+    height: 60%;
+    width: auto;
+}
+
+@keyframes animateLogo {
+    0% {
+        transform: translateX(0) rotate(0deg) scale(1);
+    }
+    75% {
+        transform: translateY(-75vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+    80% {
+        transform: translateY(-72vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+    85% {
+        transform: translateY(-60vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+    92% {
+        transform: translateY(-68vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+    96% {
+        transform: translateY(-60vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+    100% {
+        transform: translateY(-68vh) translateX(-30vh) rotate(-90deg) scale(3);
+    }
+}
+
+.huge-logo.animate {
+    animation: animateLogo 4s forwards;
+}
+
 
 nav {
     background-color: var(--background-color);

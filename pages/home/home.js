@@ -31,27 +31,52 @@ function showBox() {
         box.style.opacity = '0';
         
         box.addEventListener('transitionend', () => {
-          box.classList.add('hidden'); // La transition d'opacité est terminée, cacher la box (display: none)
-          box.removeChild(textElement); // Nettoyer le texte pour la prochaine fois
+          box.classList.add('hidden'); 
+          box.removeChild(textElement); 
 
           // Passer à la box suivante ou arrêter si c'est la dernière
           currentBoxIndex++;
 
           // Petit moment de "silence"
           setTimeout(() => {
-            if (currentBoxIndex < boxes.length) {
+            // Si on a atteint la fin des box, on affiche la final-box
+            if (currentBoxIndex === boxes.length) {
+              showFinalBox();
+            } else if (currentBoxIndex < boxes.length) {
               showBox();
             }
-          }, 1000); // temps de "silence" entre les box
+          }, 300); // temps de "silence" entre les box
           
         }, { once: true }); // L'eventListener se retire automatiquement après être exécuté une fois
         
-      }, 200 + 1500); // temps avant que la box disparaisse après le texte (+2000 pour laisser la transition se terminer)
+      }, 200 + 300); // temps avant que la box disparaisse après le texte (+2000 pour laisser la transition se terminer)
 
     }, 2000); // temps avant que le texte disparaisse
 
   }, 500); // temps avant que le texte apparaisse
 }
 
+function showFinalBox() {
+  const finalBox = document.querySelector('.final-box');
+  const hugeLogo = document.querySelector('.huge-logo');
+  
+  finalBox.classList.remove('hidden');
+
+  requestAnimationFrame(() => {
+    finalBox.style.opacity = '1';
+  });
+
+  // Déclenchez l'animation du SVG après un certain délai
+  setTimeout(() => {
+    hugeLogo.classList.add('animate');
+  }, 2000); // Remplacez 2000 (2s) par le délai souhaité
+}
+
+
 // Démarrer l'animation
 showBox();
+
+
+
+
+
