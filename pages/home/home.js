@@ -1,32 +1,41 @@
+/*
+* Cinematic animation of the boxes
+*/
+
+// Number of boxes
 const boxes = document.querySelectorAll('.box');
+
+// Index for loop
 let currentBoxIndex = 0;
 
+
+// Make box visible one after one
 function showBox() {
   const box = boxes[currentBoxIndex];
   
-  // Assurez-vous que la box est visible (display: flex)
+  // Remove hidden from current index box
   box.classList.remove('hidden');
 
-  // Donnez un petit délai pour permettre au navigateur de faire le layout avant de commencer la transition
   requestAnimationFrame(() => {
-    // Apparaît la box
     box.style.opacity = '1';
   });
 
+  // Create the text element
+  // TODO : Write letter after letter with animation //=========>
   const textElement = document.createElement('p');
   textElement.className = 'text';
   textElement.innerText = box.getAttribute('data-text');
   box.appendChild(textElement);
 
-  // Attendre un moment avant de montrer le texte
+  // Text fadein delay
   setTimeout(() => {
     textElement.style.opacity = '1';
 
-    // Attendre un moment avant de cacher le texte
+    // Text fadeout delay
     setTimeout(() => {
       textElement.style.opacity = '0';
 
-      // Attendre un moment puis cacher la box
+      // Box fadeout delay
       setTimeout(() => {
         box.style.opacity = '0';
         
@@ -34,26 +43,27 @@ function showBox() {
           box.classList.add('hidden'); 
           box.removeChild(textElement); 
 
-          // Passer à la box suivante ou arrêter si c'est la dernière
-          currentBoxIndex++;
-
-          // Petit moment de "silence"
+          // Silence
           setTimeout(() => {
-            // Si on a atteint la fin des box, on affiche la final-box
+
+            // Increment box index
+            currentBoxIndex++;
+
+            // If last box, show final box
             if (currentBoxIndex === boxes.length) {
               showFinalBox();
             } else if (currentBoxIndex < boxes.length) {
               showBox();
             }
-          }, 300); // temps de "silence" entre les box
+          }, 300); // Silence delay
           
-        }, { once: true }); // L'eventListener se retire automatiquement après être exécuté une fois
+        }, { once: true }); // Event listener
         
-      }, 200 + 300); // temps avant que la box disparaisse après le texte (+2000 pour laisser la transition se terminer)
+      }, 200 + 300); // Box fadeout delay
 
-    }, 2000); // temps avant que le texte disparaisse
+    }, 2000); // Text fadeout delay
 
-  }, 500); // temps avant que le texte apparaisse
+  }, 500); // Text fadein delay
 }
 
 function showFinalBox() {

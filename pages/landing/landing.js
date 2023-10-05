@@ -1,3 +1,7 @@
+/*
+* Animation lancer de confettis
+*/
+
 function lancerConfettis(callback) {
     const button = document.querySelector(".enter-button");
     const rect = button.getBoundingClientRect();
@@ -23,13 +27,15 @@ function lancerConfettis(callback) {
         });
     }
 
-    // Si une fonction de rappel est fournie, exécutez-la après un délai.
+    // Call back for redirection
     if (callback) {
         setTimeout(callback, 1300);
     }
 }
 
-
+/*
+* Trigger
+*/
 function onEnterButtonClick() {
     const enterButton = document.querySelector('#landingSection');
     enterButton.style.visibility = 'hidden';

@@ -1,3 +1,6 @@
+/*
+* Listener to change theme and store it in local storage
+*/
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-theme]').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -8,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/*
+* Usefull change theme immediately (should be imported from main)
+*/
 function changeTheme(themeName) {
     const root = document.documentElement;
     root.className = themeName;

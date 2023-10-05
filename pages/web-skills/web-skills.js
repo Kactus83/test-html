@@ -1,3 +1,7 @@
+/*
+* Function to toogle panels visibility with their id
+*/
+
 function toggleSettings(id) {
     const settingsArea = document.getElementById(id);
     if(settingsArea.style.display != 'none' && settingsArea.style.display != 'flex' ) {
@@ -7,6 +11,9 @@ function toggleSettings(id) {
     settingsArea.style.display = settingsArea.style.display === 'none' ? 'flex' : 'none';
 }
 
+/*
+* Particle Cloud with theme's colors (only on canvas)
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('myCanvas');
@@ -28,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.size = Math.random() * 5 + 1;
             this.speedX = Math.random() * 3 - 1.5;
             this.speedY = Math.random() * 3 - 1.5;
-            this.color = this.getRandomColor();  // assign a random color from the theme
+            this.color = this.getRandomColor();
             this.life = 100;
         }
         
@@ -49,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         draw() {
-            ctx.fillStyle = this.color;  // use the particle's color
+            ctx.fillStyle = this.color; 
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
