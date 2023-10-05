@@ -1,31 +1,49 @@
+/* 
+* Themes Variables are defined in styles.css
+*/
+
+/* 
+* Home Section Styling
+*/
+
 #homeSection {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/* 
+* Slide Element Styling
+*/
 
 .slide {
-    display: none;
-    text-align: center;
-    background-color: var(--background-secondary-color);
-    color: var(--text-color);
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: opacity 1s ease-in-out;
+  display: none; /* Initial state hidden */
+  text-align: center;
+  background-color: var(--background-secondary-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: opacity 1s ease-in-out; /* Fade effect */
 }
 
+/* Modifiers for active and inactive slide states */
+
 .slide.active {
-    display: block;
-    opacity: 1;
+  display: block; /* Visible state */
+  opacity: 1;
 }
 
 .slide.inactive {
-    opacity: 0;
+  opacity: 0;
 }
+
+/* 
+* Container Styling
+*/
 
 #container {
   height: 60vh;
@@ -33,43 +51,55 @@
   align-items: center;
   padding-top: 3%;
 }
-  
+
+/* 
+* Box Element Styling
+*/
+
 .box {
   min-width: 300px;
   min-height: 200px;
   background-color: var(--background-color); 
   margin-bottom: 10px;
-  opacity: 0;
+  opacity: 0; /* Initial state transparent */
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out; /* Fade effect */
   display: flex; 
 }
+
+/* 
+* Final Box Styling
+*/
 
 .final-box {
   min-width: 100px;
   width: 70vh;
-  opacity: 0;
+  opacity: 0; /* Initial state transparent */
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out; /* Fade effect */
   display: flex; 
 }
 
+/* 
+* Hidden Element Styling
+*/
+
 .hidden {
-  display: none;
+  display: none; /* Hidden state */
   opacity: 0;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out; /* Fade effect */
 }
+
+/* 
+* Text Element Styling
+*/
 
 .text {
-  opacity: 0;
+  opacity: 0; /* Initial state transparent */
   font-size: 20px;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out; /* Fade effect */
 }
-
-
-  
-  
