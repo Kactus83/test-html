@@ -141,6 +141,7 @@ body {
 
 .primary-color-filled {
     fill: var(--primary-color-accent);
+    animation: subtleColorChangePrimary 2.5s infinite alternate; 
 }
 
 .primary-color-filled:hover {
@@ -154,8 +155,16 @@ body {
     100% { fill: var(--primary-color-accent); }
 }
 
+@keyframes subtleColorChangePrimary {
+    0% { fill: var(--primary-color-accent); }
+    75% { fill: var(--primary-color); }
+    90% { fill: var(--primary-color-accent); }
+    100% { fill: var(--primary-color); }
+}
+
 .secondary-color-filled {
     fill: var(--primary-color);
+    animation: subtleColorChangeSecondary 2s infinite alternate; 
 }
 
 .secondary-color-filled:hover {
@@ -167,6 +176,14 @@ body {
     75% { fill: var(--secondary-color); }
     90% { fill: var(--background-secondary-color); }
     100% { fill: var(--primary-color); }
+}
+
+@keyframes subtleColorChangeSecondary {
+    0% { fill: var(--primary-color); }
+    60% { fill: var(--primary-color); }
+    75% { fill: var(--secondary-color); }
+    80% { fill: var(--primary-color); }
+    100% { fill: var(--secondary-color); }
 }
 
 
