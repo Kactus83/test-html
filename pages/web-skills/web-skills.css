@@ -40,6 +40,15 @@
     color: #fff;
 }
 
+#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1110;
+}
+
 .btn-close-settings {
     position: absolute;
     top: 20px;
@@ -50,3 +59,85 @@
     padding: 10px;
     cursor: pointer;
 }
+
+/* Animation panel */
+
+
+.animation-flexbox {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.animation-master-flexbox {
+    z-index: 1120;
+    padding: 5%;
+}
+
+.animation-box {
+    width: 200px;
+    height: 200px;
+    flex-basis: calc(40% - 25px);
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-secondary-color);
+    transition: transform 0.5s ease-in-out;
+}
+
+.animation-box:hover {
+    transform: scale(1.1);
+}
+
+#animation-1 {
+    perspective: 1000px;
+    z-index: 1121;
+}
+
+#animation-1:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    transition: transform 0.5s;
+    transform-origin: center right;
+}
+
+#animation-1:hover:before {
+    transform: rotateY(180deg);
+}
+
+#animation-2 {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#animation-3 {
+    animation: colorChange 4s infinite linear;
+}
+
+@keyframes colorChange {
+    0%, 100% { background-color: var(--primary-color); }
+    50% { background-color: var(--secondary-color); }
+}
+
+#animation-4 {
+    transition: transform 0.5s;
+}
+
+#animation-4:hover {
+    transform: rotate(180deg) scale(1.2);
+}
+
+
