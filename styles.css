@@ -197,7 +197,7 @@ p {
 }
 
 .current-nav-button {
-    color: var(--background-secondary-colorsecondary-color);
+    color: var(--primary-color-accent);
 }
 
 .current-nav-button:hover { 

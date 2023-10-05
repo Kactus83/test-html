@@ -74,12 +74,13 @@
 
 .animation-master-flexbox {
     z-index: 1120;
-    padding: 5%;
+    margin: 7%;
 }
 
 .animation-box {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
+    margin: 20px;
     flex-basis: calc(40% - 25px);
     box-sizing: border-box;
     border: 1px solid var(--primary-color);
@@ -88,7 +89,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background-secondary-color);
-    transition: transform 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .animation-box:hover {
@@ -108,37 +109,91 @@
     position: absolute;
     transition: transform 0.5s;
     transform-origin: center right;
+    box-shadow: -5px 0px 10px rgba(0,0,0,0.5);
 }
 
 #animation-1:hover:before {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);  
 }
 
 #animation-2 {
     animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+#animation-2:hover {
+    animation: none; 
+    transform: scale(1.15); 
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3); 
+    transition: all 0.3s ease-in-out; 
 }
+
+#animation-2:hover:before {
+    /* Voir si ajouts à faire */
+}
+
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.8;
+    }
+}
+
 
 #animation-3 {
     animation: colorChange 4s infinite linear;
 }
 
+#animation-3:hover {
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+#animation-3:active,
+#animation-3:focus,
+#animation-3:not(:hover) {
+    animation: colorChange 4s infinite linear;
+}
+
+
 @keyframes colorChange {
-    0%, 100% { background-color: var(--primary-color); }
-    50% { background-color: var(--secondary-color); }
+    0%, 100% { 
+        background-color: var(--primary-color);
+        transform: scale(1);
+    }
+    50% { 
+        background-color: var(--secondary-color);
+        transform: scale(1.05);
+    }
 }
 
 #animation-4 {
-    transition: transform 0.5s;
+    transition: transform 0.5s, box-shadow 0.5s;
 }
 
 #animation-4:hover {
     transform: rotate(180deg) scale(1.2);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3); 
 }
+
+@media only screen and (max-width: 768px) {
+    .animation-box {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+    }
+    /*... other styles or animations adjustments ...*/
+}
+
+
 
 
