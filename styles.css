@@ -8,6 +8,7 @@
     --background-color: #222;
     --background-secondary-color: #2b2b2b;
     --background-pattern: url("./assets/bg-pattern.png");
+    --background-pattern-for-pages: url("../../assets/bg-pattern.png");
     --primary-color: #ffc800;
     --primary-color-accent: #f6cd00;
     --primary-color-super-accent: #ffe600;
