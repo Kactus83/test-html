@@ -33,11 +33,11 @@
 
 /* Green theme */
 .green-theme {
-    --primary-color: #35aa3b;
-    --primary-color-accent: #2dc932;
-    --primary-color-super-accent: #12ec1a;
-    --secondary-color: #2e7d32;
-    --secondary-color-accent: #126c16;
+    --primary-color: #00d200;
+    --primary-color-accent: #31e200;
+    --primary-color-super-accent: #30ff37;
+    --secondary-color: #008e23;
+    --secondary-color-accent: #00671a;
 }
 
 /* Blue theme */
@@ -51,11 +51,11 @@
 
 /* Red theme */
 .red-theme {
-    --primary-color: #bd1e1c;
-    --primary-color-accent: #e61616;
+    --primary-color: #d91b18;
+    --primary-color-accent: #e60d0d;
     --primary-color-super-accent: #ff4949;
-    --secondary-color: #8a1a1a;
-    --secondary-color-accent: #710b0b;
+    --secondary-color: #9f1d00;
+    --secondary-color-accent: #7b2e04;
 }
 
 /* Purple theme */
