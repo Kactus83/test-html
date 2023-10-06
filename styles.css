@@ -51,11 +51,11 @@
 
 /* Red theme */
 .red-theme {
-    --primary-color: #d91b18;
+    --primary-color: #bc0b08;
     --primary-color-accent: #e60d0d;
     --primary-color-super-accent: #ff4949;
-    --secondary-color: #9f1d00;
-    --secondary-color-accent: #7b2e04;
+    --secondary-color: #a21300;
+    --secondary-color-accent: #820f00;
 }
 
 /* Purple theme */
@@ -353,11 +353,13 @@ p {
     outline: none;
     margin: 10px;
     letter-spacing: 1.5px;
-    background-image: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    background-image: linear-gradient(45deg, var(--secondary-color-accent), var(--primary-color-accent));
 }
 
 .current-nav-button {
     color: var(--secondary-color-accent);
+    border-radius: 20px;
+    pointer-events: none;
 }
 
 .current-nav-button:hover { 
@@ -365,7 +367,7 @@ p {
 }
 
 .nav-button:hover {
-    background-image: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background-image: linear-gradient(45deg, var(--primary-color-accent), var(--secondary-color));
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
