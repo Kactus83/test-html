@@ -55,19 +55,6 @@ nav.visible {
   transition: opacity 1s ease-in-out;
 }
 
-/* Modifiers for active and inactive slide states */
-
-.slide.active {
-  display: block; 
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.inactive {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
 /* 
 * Box Element Styling
 */
@@ -76,12 +63,13 @@ nav.visible {
   min-width: 300px;
   min-height: 200px;
   background-color: var(--background-color); 
+  padding: 22px;
   margin-bottom: 10px;
-  opacity: 0; /* Initial state transparent */
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: opacity 3s ease-in-out; /* Fade effect */
+  opacity: 0;
+  transition: opacity 3s ease-in-out; 
   display: flex; 
 }
 
@@ -92,11 +80,10 @@ nav.visible {
 .final-box {
   min-width: 100px;
   width: 70vh;
-  opacity: 0; /* Initial state transparent */
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: opacity 3s ease-in-out; /* Fade effect */
+  transition: opacity 3s ease-in-out; 
   display: flex; 
 }
 
@@ -117,7 +104,9 @@ nav.visible {
 */
 
 .hidden {
-  display: none; 
   opacity: 0;
-  transition: opacity 2s ease-in-out; 
+}
+
+.no-display {
+  display: none; 
 }

@@ -11,9 +11,17 @@ let currentBoxIndex = 0;
 
 // Make box visible one after one
 function showBox() {
+  
+  // Hide pointer
+  document.getElementById('cursor').style.opacity = 0;
+
+  // Select the good box
   const box = boxes[currentBoxIndex];
   
-  // Remove hidden from current index box
+  // Remove hidden and no-display from current index box
+  // Two steps are needed to avoid display bugs
+  box.classList.add('hidden');
+  box.classList.remove('no-display');
   box.classList.remove('hidden');
 
   requestAnimationFrame(() => {
@@ -40,7 +48,11 @@ function showBox() {
         box.style.opacity = '0';
         
         box.addEventListener('transitionend', () => {
+          // Make bloc disapear
+          // Two steps to avoid animations display bugs
           box.classList.add('hidden'); 
+          box.classList.add('no-display'); 
+          box.classList.remove('hidden'); 
           box.removeChild(textElement); 
 
           // Silence
@@ -72,6 +84,8 @@ function showFinalBox() {
   const hugeLogo = document.querySelector('.huge-logo');
   const nav = document.querySelector('nav'); 
   
+  finalBox.classList.add('hidden');
+  finalBox.classList.remove('no-display');
   finalBox.classList.remove('hidden');
 
   requestAnimationFrame(() => {
@@ -85,11 +99,13 @@ function showFinalBox() {
   setTimeout(() => {
       nav.classList.add('visible');
   }, 4000); 
+    
+  // Show pointer
+  document.getElementById('cursor').style.opacity = 1;
 }
 
 // Animation start
 showBox();
-
 
 
 

@@ -269,6 +269,14 @@ footer {
     transition: filter 0.3s ease-in-out; 
 }
 
+.huge-logo-higher-part {
+    z-index: 5000;
+}
+
+.huge-logo-higher-part:hover {
+    z-index: 10000;
+}
+
 .header-logo {
     margin-top: -40px;
     height: 100px;
