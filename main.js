@@ -23,7 +23,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Custom cursor changes on specific hovers
-document.querySelectorAll('button, .column-child-block, .skill-card, .animation-box').forEach(element => {
+document.querySelectorAll('button, .column-child-block, .skill-card, .animation-box, .primary-color-filled, .secondary-color-filled').forEach(element => {
     element.addEventListener('mouseenter', () => {
         console.log('Element hovered!');
         document.getElementById('cursor').classList.add('clickable-hover');
