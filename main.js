@@ -23,14 +23,20 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Custom cursor changes on specific hovers
-document.querySelectorAll('button, .column-child-block, .skill-card, .animation-box, .primary-color-filled, .secondary-color-filled').forEach(element => {
+document.querySelectorAll('.column-child-block, .skill-card, .animation-box, .primary-color-filled, .secondary-color-filled').forEach(element => {
     element.addEventListener('mouseenter', () => {
-        console.log('Element hovered!');
         document.getElementById('cursor').classList.add('clickable-hover');
     });
     element.addEventListener('mouseleave', () => {
-        console.log('Element unhovered!');
         document.getElementById('cursor').classList.remove('clickable-hover');
+    });
+});
+document.querySelectorAll('button, .header-logo').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        document.getElementById('cursor').classList.add('mini-clickable-hover');
+    });
+    element.addEventListener('mouseleave', () => {
+        document.getElementById('cursor').classList.remove('mini-clickable-hover');
     });
 });
 
