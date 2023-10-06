@@ -139,12 +139,26 @@ body {
 
 #cursor.clickable-hover {
     transform: translate(-50%, -50%) scale(0.50); 
-    background-color: var(--primary-color-accent); 
+    animation: colorChangePrimaryAccent 2s infinite alternate;
 }
 
 #cursor.mini-clickable-hover {
     transform: translate(-50%, -50%) scale(0.20); 
-    background-color: var(--primary-color-super-accent); 
+    animation: colorChangePrimarySuperAccent 1s infinite alternate;
+}
+
+@keyframes colorChangePrimaryAccent {
+    0% { background-color: var(--primary-color-accent); }
+    75% { background-color: var(--primary-color-super-accent); }
+    90% { background-color: var(--primary-color); }
+    100% { background-color: var(--primary-color-accent); }
+}
+
+@keyframes colorChangePrimarySuperAccent {
+    0% { background-color: var(--primary-color-super-accent); }
+    75% { background-color: var(--primary-color-super-accent); }
+    90% { background-color: var(--text-color); }
+    100% { background-color: var(--primary-color-super-accent); }
 }
 
 /* 
