@@ -66,6 +66,7 @@ function showBox() {
   }, 500); // Text fadein delay
 }
 
+// Final box is big svg logo that doesn't disapear
 function showFinalBox() {
   const finalBox = document.querySelector('.final-box');
   const hugeLogo = document.querySelector('.huge-logo');
@@ -86,9 +87,7 @@ function showFinalBox() {
   }, 4000); 
 }
 
-
-
-// Démarrer l'animation
+// Animation start
 showBox();
 
 

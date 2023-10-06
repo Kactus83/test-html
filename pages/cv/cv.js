@@ -1,39 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let blocks = document.querySelectorAll('.column-block');
-    let isHovered = false;
-    let animatedBlocksIndices = [];
 
+    // Array to store column blocks and thoses wich have been animated
+    let blocks = document.querySelectorAll('.column-block');
+    let animatedBlocksIndices = [];
+    // Flag to state if one block is hovered
+    let isHovered = false;
+
+    // Util function to get random numer
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
 
     function animateRandomBlock() {
+
+        // If one block is hovered, no animation on the others
         if(isHovered) {
-            // Si un bloc est survolé, retirez l'animation de tous les blocs
             blocks.forEach(block => {
                 block.classList.remove('animate-bg');
             });
-            return;  // Ne continuez pas à ajouter une nouvelle animation
+            return; 
         }
 
-        // Si tous les blocs ont été animés, réinitialiser le tableau
+        // If all blocks have been animated, clean array
         if(animatedBlocksIndices.length === blocks.length) {
             animatedBlocksIndices = [];
         }
 
-        // Choix d'un bloc qui n'a pas encore été animé
+        // Choose new random block
         let newBlockIndex;
         do {
             newBlockIndex = getRandomInt(blocks.length);
         } while (animatedBlocksIndices.includes(newBlockIndex));
 
-        // Ajouter l'index du nouveau bloc au tableau et appliquer l'animation
+        // Animate block and store index in animated blocks array
         animatedBlocksIndices.push(newBlockIndex);
         blocks.forEach((block, index) => {
             block.classList.toggle('animate-bg', index === newBlockIndex);
         });
     }
 
+    // Add listeners to edit isHovered flag
     blocks.forEach(block => {
         block.addEventListener('mouseenter', () => {
             isHovered = true;
@@ -46,9 +52,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Launch animations and listeners
     setInterval(animateRandomBlock, 5000);
 });
 
+
+/*
+* List elements blink animation when parent block is hovered
+*/
 document.addEventListener("DOMContentLoaded", function() {
     let childBlocks = document.querySelectorAll('.column-child-block');
 
@@ -56,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         block.addEventListener('mouseenter', () => {
             let listItems = block.querySelectorAll('.info-list li');
             listItems.forEach((li, index) => {
-                // Définissez un délai basé sur l'index pour que chaque élément commence à clignoter après le précédent
+                // TODO : dynamic time of delay (calculated with number of blocs)
                 li.style.animationDelay = `${index * 0.333333}s`;
                 li.classList.add('blinking');
             });
@@ -65,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
         block.addEventListener('mouseleave', () => {
             let listItems = block.querySelectorAll('.info-list li');
             listItems.forEach(li => {
-                // Réinitialisez le délai d'animation et retirez la classe de clignotement
                 li.style.animationDelay = `0s`;
                 li.classList.remove('blinking');
             });
