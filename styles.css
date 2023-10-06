@@ -4,6 +4,7 @@
 
 :root {
     /* Main variables */
+    --background-deep-color: #111;
     --background-color: #222;
     --background-secondary-color: #2b2b2b;
     --background-pattern: url("./assets/bg-pattern.png");
@@ -140,6 +141,10 @@ body {
 #cursor.clickable-hover {
     transform: translate(-50%, -50%) scale(0.50); 
     animation: colorChangePrimaryAccent 2s infinite alternate;
+}
+
+#cursor.hidden {
+    opacity: 0%;
 }
 
 #cursor.mini-clickable-hover {

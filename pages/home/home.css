@@ -34,25 +34,10 @@ nav.visible {
 */
 
 #container {
-  height: 60vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   padding-top: 3%;
-}
-
-/* 
-* Slide Element Styling
-*/
-
-.slide {
-  display: none; 
-  text-align: center;
-  background-color: var(--background-secondary-color);
-  color: var(--text-color);
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 8px;
-  transition: opacity 1s ease-in-out;
 }
 
 /* 
@@ -63,14 +48,27 @@ nav.visible {
   min-width: 300px;
   min-height: 200px;
   background-color: var(--background-color); 
-  padding: 22px;
-  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 200px;
   text-align: center;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 3s ease-in-out; 
   display: flex; 
+  border: 1px solid transparent;
+  animation: boxColorChangeSecondary 5s ease-in-out infinite;
+}
+
+@keyframes boxColorChangeSecondary {
+  0% { border-color: transparent; border-radius: 25%; background-color: var(--background-deep-color);}
+  50% { border-color: transparent; border-radius: 20%; background-color: var(--background-color);}
+  70% { border-color: var(--secondary-color-accent); border-radius: 8%; background-color: var(--background-secondary-color);}
+  88% { border-color: var(--secondary-color); border-radius: 1%; background-color: var(--background-secondary-color);}
+  100% { border-color: var(--primary-color-accent); border-radius:0; background-color: var(--background-color);}
 }
 
 /* 
@@ -87,7 +85,6 @@ nav.visible {
   display: flex; 
 }
 
-
 /* 
 * Box Text Element Styling
 */
@@ -95,9 +92,10 @@ nav.visible {
 .text {
   opacity: 0; 
   font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   transition: opacity 2s ease-in-out; 
 }
-
 
 /* 
 * Hidden Util Class

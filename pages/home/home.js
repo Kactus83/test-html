@@ -11,7 +11,7 @@ let currentBoxIndex = 0;
 
 // Make box visible one after one
 function showBox() {
-  
+
   // Hide pointer
   document.getElementById('cursor').style.opacity = 0;
 
@@ -73,7 +73,7 @@ function showBox() {
         
       }, 200 + 300); // Box fadeout delay
 
-    }, 2000); // Text fadeout delay
+    }, 3500); // Text fadeout delay
 
   }, 500); // Text fadein delay
 }

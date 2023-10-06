@@ -76,8 +76,8 @@
 
 .landing-area-title {
     color: var(--primary-color-accent);
-    font-size: 75px;
-    letter-spacing: 5px;
+    font-size: 82px;
+    letter-spacing: 6px;
     margin-bottom: 0;
 }
 
@@ -85,7 +85,25 @@
     color: var(--background-color);
     text-transform: uppercase;
     background-color: var(--primary-color-accent);
-    font-size: 23px;
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 5px;
+    transition: background-color 0.5s ease-in-out;
+    transition: color 1s ease-in-out;
+    transition: font-size 0.6s ease-in-out;
+}
+
+.landing-area-text:hover {
+    color: var(--primary-color-super-accent);
+    background-color: var(--background-secondary-color);
+    font-size: 22px;
+}
+
+.landing-area-text {
+    color: var(--background-color);
+    text-transform: uppercase;
+    background-color: var(--primary-color-accent);
+    font-size: 19px;
     margin-bottom: 0;
     margin-top: 5px;
 }

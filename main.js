@@ -39,5 +39,13 @@ document.querySelectorAll('button, .header-logo').forEach(element => {
         document.getElementById('cursor').classList.remove('mini-clickable-hover');
     });
 });
+document.querySelectorAll('.landing-area-text').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        document.getElementById('cursor').classList.add('hidden');
+    });
+    element.addEventListener('mouseleave', () => {
+        document.getElementById('cursor').classList.remove('hidden');
+    });
+});
 
 
