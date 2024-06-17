@@ -18,9 +18,29 @@ function applyTheme(themeName) {
 */
 document.addEventListener('mousemove', (e) => {
     const cursor = document.getElementById('cursor');
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
+    const cursorSize = cursor.offsetWidth / 2;
+    const pageWidth = window.innerWidth;
+    const pageHeight = window.innerHeight;
+
+    let x = e.pageX;
+    let y = e.pageY;
+
+    if (x < cursorSize) {
+        x = cursorSize;
+    } else if (x > pageWidth - cursorSize) {
+        x = pageWidth - cursorSize;
+    }
+
+    if (y < cursorSize) {
+        y = cursorSize;
+    } else if (y > pageHeight - cursorSize) {
+        y = pageHeight - cursorSize;
+    }
+
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
 });
+
 
 // Custom cursor changes on specific hovers
 document.querySelectorAll('.column-child-block, .skill-card, .animation-box, .primary-color-filled, .secondary-color-filled').forEach(element => {
