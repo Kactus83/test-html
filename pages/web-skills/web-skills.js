@@ -124,3 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     animate();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.github-project a');
+
+    links.forEach(link => {
+        setInterval(() => {
+            link.classList.add('pulse');
+            setTimeout(() => {
+                link.classList.remove('pulse');
+            }, 1000);
+        }, 10000); // Animation toutes les 10 secondes
+    });
+});
