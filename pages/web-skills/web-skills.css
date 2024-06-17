@@ -307,5 +307,40 @@ h2 {
         height: 80px;
         margin: 10px;
     }
-    /*... other styles or animations adjustments ...*/
 }
+
+.github-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.github-project {
+    background-color: var(--background-secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.github-project h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.github-project p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.github-project a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
