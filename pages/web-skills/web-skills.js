@@ -33,6 +33,42 @@ function changeTheme(themeName) {
 }
 
 /*
+* Function to animate the project titles with random animations
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectTitles = document.querySelectorAll('.github-project h3');
+
+    projectTitles.forEach(title => {
+        const letters = title.textContent.split('');
+        title.textContent = '';
+
+        letters.forEach(letter => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            title.appendChild(span);
+        });
+    });
+
+    function applyRandomAnimation() {
+        projectTitles.forEach(title => {
+            const spans = title.querySelectorAll('span');
+            spans.forEach(span => {
+                span.classList.remove('blink', 'pulse');
+            });
+
+            const randomIndex = Math.floor(Math.random() * spans.length);
+            const randomAnimation = Math.random() > 0.5 ? 'blink' : 'pulse';
+            spans[randomIndex].classList.add(randomAnimation);
+        });
+    }
+
+    setInterval(applyRandomAnimation, 500);
+});
+
+
+
+/*
 * Particle Cloud animation with theme's colors (only on Web skills page -> animation panel)
 */
 

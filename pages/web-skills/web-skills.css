@@ -395,7 +395,7 @@ h2 {
 }
 
 .github-project button {
-    animation: link-pulse 2s infinite;
+    animation: link-pulse 1s infinite;
 }
 
 @media only screen and (max-width: 768px) {
@@ -407,4 +407,29 @@ h2 {
     .github-project {
         width: 95%;
     }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.github-project h3 span {
+    display: inline-block;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.blink {
+    animation-name: blink;
+}
+
+.pulse {
+    animation-name: pulse;
 }
