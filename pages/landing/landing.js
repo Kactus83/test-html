@@ -144,7 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const posY = canvas.height; // Start from the bottom
         particles.push(new Particle(posX, posY));
     };
+
+    const createParticleBurst = () => {
+        const burstInterval = setInterval(() => {
+            for (let i = 0; i < 10; i++) {
+                createParticle();
+            }
+        }, 50);
+
+        setTimeout(() => {
+            clearInterval(burstInterval);
+            scheduleNextBurst(); // Schedule the next burst after this one ends
+        }, 500);
+    };
     
+    const scheduleNextBurst = () => {
+        const randomDelay = Math.random() * (15000 - 3000) + 3000;
+        setTimeout(createParticleBurst, randomDelay);
+    };
+
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach((p, i) => {
@@ -159,6 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Create particles at a regular interval
     setInterval(createParticle, 100);
+    
+    // Schedule the first particle burst
+    scheduleNextBurst();
     
     animate();
 });
