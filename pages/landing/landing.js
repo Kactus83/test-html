@@ -1,3 +1,7 @@
+let canvas, ctx; // Déclare canvas et ctx en dehors de toute fonction pour qu'ils soient accessibles partout
+let particles = [];
+let particleCreationEnabled = true; // Variable de contrôle pour la création de particules
+
 /*
 * Animation lancer de confettis
 */
@@ -40,6 +44,13 @@ function onEnterButtonClick() {
     const enterButton = document.querySelector('#landingSection');
     enterButton.style.visibility = 'hidden';
 
+    // Stop particle creation
+    particleCreationEnabled = false;
+
+    // Clear existing particles and canvas
+    particles = [];
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     lancerConfettis(function() {
         location.href = '../home/home.html';
     });
@@ -49,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /*
     * Canvas setup
     */
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
+    canvas = document.getElementById('particleCanvas'); // Initialise canvas ici
+    ctx = canvas.getContext('2d');
     
     const resizeCanvas = () => {
         canvas.width = window.innerWidth;
@@ -88,8 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         getRandomColor() {
             const colors = [
                 getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim(),
-                getComputedStyle(document.documentElement).getPropertyValue('--primary-color-accent').trim(),
-                getComputedStyle(document.documentElement).getPropertyValue('--primary-color-super-accent').trim(),
                 getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim(),
                 getComputedStyle(document.documentElement).getPropertyValue('--secondary-color-accent').trim(),
             ];
@@ -137,18 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    let particles = [];
-    
     const createParticle = () => {
-        const posX = Math.random() * canvas.width;
-        const posY = canvas.height; // Start from the bottom
-        particles.push(new Particle(posX, posY));
+        if (particleCreationEnabled) {
+            const posX = Math.random() * canvas.width;
+            const posY = canvas.height; // Start from the bottom
+            particles.push(new Particle(posX, posY));
+        }
     };
 
     const createParticleBurst = () => {
         const burstInterval = setInterval(() => {
-            for (let i = 0; i < 10; i++) {
-                createParticle();
+            if (particleCreationEnabled) {
+                for (let i = 0; i < 10; i++) {
+                    createParticle();
+                }
             }
         }, 50);
 
@@ -176,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // Create particles at a regular interval
-    setInterval(createParticle, 150);
+    const particleInterval = setInterval(createParticle, 150);
     
     // Schedule the first particle burst
     scheduleNextBurst();
