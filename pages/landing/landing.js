@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     // Create particles at a regular interval
-    setInterval(createParticle, 100);
+    setInterval(createParticle, 150);
     
     // Schedule the first particle burst
     scheduleNextBurst();
