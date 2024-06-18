@@ -45,3 +45,110 @@ function onEnterButtonClick() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    /*
+    * Canvas setup
+    */
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    const resizeCanvas = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    let mouse = {
+        x: canvas.width / 2,
+        y: canvas.height / 2
+    };
+
+    // Update mouse position
+    canvas.addEventListener('mousemove', (event) => {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+    });
+
+    /*
+    * Particle class
+    */
+    class Particle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 5 + 1;
+            this.speedX = Math.random() * 3 - 1.5;
+            this.speedY = -Math.random() * 3 - 1; // Particles move upwards
+            this.color = this.getRandomColor();
+            this.life = 150;
+        }
+        
+        getRandomColor() {
+            const colors = [
+                getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--primary-color-accent').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--primary-color-super-accent').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--secondary-color-accent').trim(),
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        update() {
+            // Calculate distance to mouse
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            // Apply attraction force
+            if (distance < 500) {
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = 500;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * 0.1; // Adjust force strength
+                let directionY = forceDirectionY * force * 0.1;
+
+                this.speedX += directionX;
+                this.speedY += directionY;
+            }
+
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.life -= 1;
+        }
+        
+        draw() {
+            ctx.fillStyle = this.color; 
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    
+    let particles = [];
+    
+    const createParticle = () => {
+        const posX = Math.random() * canvas.width;
+        const posY = canvas.height; // Start from the bottom
+        particles.push(new Particle(posX, posY));
+    };
+    
+    const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p, i) => {
+            p.update();
+            p.draw();
+            if (p.life <= 0) {
+                particles.splice(i, 1);
+            }
+        });
+        requestAnimationFrame(animate);
+    };
+    
+    // Create particles at a regular interval
+    setInterval(createParticle, 100);
+    
+    animate();
+});
