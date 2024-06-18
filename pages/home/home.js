@@ -82,13 +82,13 @@ function showBox() {
                             } else if (currentBoxIndex < boxes.length) {
                                 showBox();
                             }
-                        }, 300); // Silence delay
+                        }, 200); // Silence delay
                         
                     }, { once: true }); // Event listener
                     
-                }, 600); // Box fadeout delay
+                }, 200); // Box fadeout delay
 
-            }, 5000); // Text fadeout delay
+            }, 2500); // Text fadeout delay
 
         }, 1000); // Text fadein delay
 
