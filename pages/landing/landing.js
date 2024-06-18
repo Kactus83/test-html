@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             this.speedX = Math.random() * 3 - 1.5;
             this.speedY = -Math.random() * 3 - 1; // Particles move upwards
             this.color = this.getRandomColor();
-            this.life = 150;
+            this.life = 250;
+            this.attracted = false;
         }
         
         getRandomColor() {
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Apply attraction force
             if (distance < 500) {
+                this.attracted = true;
                 let forceDirectionX = dx / distance;
                 let forceDirectionY = dy / distance;
                 let maxDistance = 500;
@@ -112,11 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.speedX += directionX;
                 this.speedY += directionY;
+            } else {
+                this.attracted = false;
             }
 
             this.x += this.speedX;
             this.y += this.speedY;
-            this.life -= 1;
+            
+            // Reduce life faster if attracted
+            if (this.attracted) {
+                this.life -= 2;
+            } else {
+                this.life -= 1;
+            }
         }
         
         draw() {
