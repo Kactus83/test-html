@@ -1,7 +1,3 @@
-/* 
-* Themes Variables are defined in styles.css
-*/
-
 /* CSS override to hide nav on start */
 nav {
   opacity: 0;
@@ -16,10 +12,7 @@ nav.visible {
     transform: scaleY(1);
 }
 
-/* 
-* Home Section Styling
-*/
-
+/* Home Section Styling */
 #homeSection {
   width: 80%;
   display: flex;
@@ -29,10 +22,7 @@ nav.visible {
   margin-right: auto;
 }
 
-/* 
-* Slides Container Styling
-*/
-
+/* Slides Container Styling */
 #container {
   height: 70vh;
   display: flex;
@@ -40,10 +30,7 @@ nav.visible {
   padding-top: 3%;
 }
 
-/* 
-* Box Element Styling
-*/
-
+/* Box Element Styling */
 .box {
   min-width: 300px;
   min-height: 200px;
@@ -57,10 +44,10 @@ nav.visible {
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 3s ease-in-out; 
+  transition: opacity 2s ease-in-out; 
   display: flex; 
   border: 1px solid transparent;
-  animation: boxColorChangeSecondary 5s ease-in-out;
+  animation: boxColorChangeSecondary 4s ease-in-out;
 }
 
 @keyframes boxColorChangeSecondary {
@@ -102,24 +89,18 @@ nav.visible {
   }
 }
 
-/* 
-* Final Box Styling
-*/
-
+/* Final Box Styling */
 .final-box {
   min-width: 100px;
   width: 70vh;
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: opacity 3s ease-in-out; 
+  transition: opacity 2s ease-in-out; 
   display: flex; 
 }
 
-/* 
-* Box Text Element Styling
-*/
-
+/* Box Text Element Styling */
 .text {
   opacity: 0; 
   font-size: 20px;
@@ -128,10 +109,7 @@ nav.visible {
   transition: opacity 2s ease-in-out; 
 }
 
-/* 
-* Hidden Util Class
-*/
-
+/* Hidden Util Class */
 .hidden {
   opacity: 0;
 }
