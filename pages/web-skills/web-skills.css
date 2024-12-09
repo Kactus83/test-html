@@ -54,6 +54,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+    overflow: auto;
 }
 
 /* Panel Settings */
@@ -412,5 +413,132 @@ h2 {
         height: 80px;
         margin: 10px;
     }
+}
+
+.github-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.github-project {
+    background-color: var(--background-secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.github-project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.github-project h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.github-project p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.github-project button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.github-project button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.75s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.github-project button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.github-project button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.github-project button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes link-pulse {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-color);
+    }
+}
+
+.github-project button {
+    animation: link-pulse 1s infinite;
+}
+
+@media only screen and (max-width: 768px) {
+    .animation-box {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+    }
+    .github-project {
+        width: 95%;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.github-project h3 span {
+    display: inline-block;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.blink {
+    animation-name: blink;
+}
+
+.pulse {
+    animation-name: pulse;
 
 }

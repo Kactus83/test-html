@@ -257,14 +257,57 @@ nav {
     top: 100px;
 }
 
+/* Footer Styles */
 footer {
-    position: fixed;
+    position: fixed !important;
     bottom: 0;
     width: 100%;
+    height: 60px;
     background-image: linear-gradient(to bottom, transparent 0%, var(--background-color) 30%, var(--background-color) 100%);
     color: var(--primary-color);
     text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.footer-text {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.social-icons {
+    margin-top: 13px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30px;
+    height: 30px;
+    transition: fill 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    color: var(--primary-color);
+}
+
+.social-icon:hover {
+    color: var(--primary-color-accent);
+    transform: scale(1.2); /* Added scale transform */
+}
+
+.icon-path {
+    fill: var(--primary-color);
+}
+
 
 /* 
 * Logo Styles
@@ -351,9 +394,33 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: var(--primary-color);
 }
-
 .footer-text {
     margin-bottom: 0px;
+    animation: blink 10s infinite, haloEffect 1.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes haloEffect {
+    0% {
+        filter: drop-shadow(0 0 5px transparent); 
+    }
+    100% {
+        filter: drop-shadow(0 0 15px var(--secondary-color)); 
+    }
 }
 
 /* 
