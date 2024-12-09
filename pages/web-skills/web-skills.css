@@ -76,6 +76,111 @@
     z-index: 1300;
 }
 
+/* Grille des projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+
+    /* Pour rendre la grille défilable */
+    max-height: 70vh; /* Limite la hauteur à 70% de la fenêtre */
+    overflow-y: auto; /* Active le défilement vertical */
+    padding-right: 10px; /* Évite que le contenu touche trop près le bord */
+}
+
+/* Personnalisation de la scrollbar (optionnelle, pour un rendu pro) */
+.projects-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background-color: var(--background-color);
+}
+
+
+/* Carte de projet */
+.project-card {
+    background: var(--background-secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-thumbnail {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.project-description {
+    font-size: 0.9em;
+    color: var(--text-secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: var(--secondary-color-accent);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+/* Boutons */
+.project-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-view-github,
+.btn-details {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.btn-view-github:hover,
+.btn-details:hover {
+    background: var(--primary-color-accent);
+}
+
+
 /* 
 * Colored div for themes panel
 */
@@ -307,5 +412,5 @@ h2 {
         height: 80px;
         margin: 10px;
     }
-    /*... other styles or animations adjustments ...*/
+
 }

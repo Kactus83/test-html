@@ -136,15 +136,16 @@
                 
                 <!-- Fullscreen overlay Hidden by default -->
                 <div class="github-area" id="github-panel">
-                    <!-- Overlay toogle (OFF) -->
-                    <button class="btn-close-settings" onclick="toggleSettings('github-panel')">X</button> 
+                    <!-- Bouton de fermeture -->
+                    <button class="btn-close-settings" onclick="toggleSettings('github-panel')">X</button>
                     <div>
-                        <h2>- Github projects -</h2>
+                        <h2>Mes Projets GitHub</h2>
                     </div>
-                    <div>
-                        <p> TODO: Add links </p> 
-                    </div>                  
-                </div>
+                    <!-- Grille pour les cartes de projets -->
+                    <div class="projects-grid">
+                        <!-- Le contenu sera injecté ici dynamiquement -->
+                    </div>
+                </div>                
             </div>
         </section>
         
@@ -155,6 +156,7 @@
 
         <script src="../../main.js"></script>
         <script src="./web-skills.js"></script>
+        <script type="module" src="./github-projects.js"></script>
     </body>
         
 </html>
