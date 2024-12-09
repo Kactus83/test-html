@@ -1,13 +1,15 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const url = require('url'); 
 
 const PORT = 8085;
 
 // Crée le serveur HTTP
 http.createServer((req, res) => {
-    // Gère la route par défaut (index.html)
-    let filePath = req.url === '/' ? './index.html' : `.${req.url}`;
+    // Analyse l'URL et retire les paramètres
+    const parsedUrl = url.parse(req.url);
+    let filePath = parsedUrl.pathname === '/' ? './index.html' : `.${parsedUrl.pathname}`;
     const extname = String(path.extname(filePath)).toLowerCase();
 
     // Types MIME pour différents fichiers

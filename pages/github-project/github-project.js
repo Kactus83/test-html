@@ -4,16 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id');
 
-    if (projectId === null || !projects[projectId]) {
+    if (projectId === null || !projects[projectId - 1]) {
         console.error("Projet non trouvé ou ID invalide.");
         return;
     }
 
-    const project = projects[projectId];
+    const project = projects[projectId - 1];
 
     // Injecter les données dans la page
-    document.querySelector('.project-title').textContent = project.title;
+    document.querySelector('.project-title').textContent = project.name;
     document.querySelector('.project-summary').textContent = project.description;
+    document.querySelector('.project-long-description').textContent = project.longDescription;
 
     // Galerie
     const gallery = document.querySelector('.gallery');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             const img = document.createElement('img');
             img.setAttribute('src', item);
+            img.classList.add('gallery-item');
             gallery.appendChild(img);
         }
     });
@@ -36,15 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         li.innerHTML = `<span class="tech-name">${tech}</span>`;
         techList.appendChild(li);
-    });
-
-    // Statut et prochaines étapes
-    document.querySelector('.project-status p strong').textContent = project.status;
-    const nextStepsList = document.querySelector('.next-steps');
-    project.nextSteps.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step;
-        nextStepsList.appendChild(li);
     });
 
     // Documentation & Liens
@@ -58,4 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (project.resources.demo) {
         resourcesList.innerHTML += `<li><a href="${project.resources.demo}" target="_blank">Démonstration en Ligne</a></li>`;
     }
+
+    // Gestion des onglets
+    const tabs = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(tc => tc.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.querySelector(`#${tab.dataset.tab}`).classList.add('active');
+        });
+    });
+
+    // Afficher le premier onglet par défaut
+    document.querySelector('.tab-content#description').classList.add('active');
 });

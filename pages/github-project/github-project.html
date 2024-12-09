@@ -56,54 +56,40 @@
     </header>
 
     <main class="project-page">
-        <!-- Titre et résumé -->
+        <!-- Section d'informations générales -->
         <section class="project-header">
             <h1 class="project-title">Titre du Projet</h1>
-            <p class="project-summary">Résumé concis du projet, ses objectifs principaux et son impact.</p>
+            <p class="project-summary">Résumé concis du projet.</p>
         </section>
 
-        <!-- Galerie d'images et vidéos -->
-        <section class="project-gallery">
-            <h2>Galerie</h2>
-            <div class="gallery">
-                <img src="./images/project-image-1.png" alt="Aperçu du projet">
-                <img src="./images/project-image-2.png" alt="Fonctionnalité clé">
-                <video controls>
-                    <source src="./videos/project-demo.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture vidéo.
-                </video>
+        <!-- Contenu avec onglets -->
+        <section class="project-tabs">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="description">Description</button>
+                <button class="tab-button" data-tab="gallery">Galerie</button>
+                <button class="tab-button" data-tab="technologies">Technologies</button>
+                <button class="tab-button" data-tab="resources">Ressources</button>
             </div>
-        </section>
 
-        <!-- Technologies utilisées -->
-        <section class="project-technologies">
-            <h2>Technologies Utilisées</h2>
-            <ul class="tech-list">
-                <li><span class="tech-name">JavaScript</span>: Utilisé pour gérer la logique du projet.</li>
-                <li><span class="tech-name">React</span>: Framework front-end.</li>
-                <li><span class="tech-name">Node.js</span>: Backend pour le traitement des données.</li>
-            </ul>
-        </section>
+            <div class="tab-content" id="description">
+                <h2>Description détaillée</h2>
+                <p class="project-long-description"></p>
+            </div>
 
-        <!-- État actuel et améliorations -->
-        <section class="project-status">
-            <h2>État Actuel et Prochaines Étapes</h2>
-            <p><strong>Statut :</strong> En cours</p>
-            <ul class="next-steps">
-                <li>Correction des bugs mineurs liés à [fonctionnalité].</li>
-                <li>Ajout de [nouvelle fonctionnalité].</li>
-                <li>Optimisation de la performance pour les [plateformes ciblées].</li>
-            </ul>
-        </section>
+            <div class="tab-content" id="gallery" style="display: none;">
+                <h2>Galerie</h2>
+                <div class="gallery"></div>
+            </div>
 
-        <!-- Documentation & Liens externes -->
-        <section class="project-resources">
-            <h2>Documentation et Liens</h2>
-            <ul class="resources-list">
-                <li><a href="#" target="_blank">Code Source sur GitHub</a></li>
-                <li><a href="./docs/project-documentation.pdf" target="_blank">Documentation Technique</a></li>
-                <li><a href="#" target="_blank">Démonstration en Ligne</a></li>
-            </ul>
+            <div class="tab-content" id="technologies" style="display: none;">
+                <h2>Technologies Utilisées</h2>
+                <ul class="tech-list"></ul>
+            </div>
+
+            <div class="tab-content" id="resources" style="display: none;">
+                <h2>Documentation et Liens</h2>
+                <ul class="resources-list"></ul>
+            </div>
         </section>
     </main>
 
@@ -111,5 +97,6 @@
         <p class="footer-text">© 2023 Florian MORENA</p>
     </footer>
 </body>
+<script src="../../main.js"></script>
 <script type="module" src="./github-project.js"></script>
 </html>

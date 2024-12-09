@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="project-actions">
                 <a href="${project.githubUrl}" target="_blank" class="btn-view-github">Voir sur GitHub</a>
-                <a href="../github-project/github-project.html?id=${index}" class="btn-details">Détails</a>
+                <a href="/pages/github-project/github-project.html?id=${index}" class="btn-details">Détails</a>
             </div>
         `;
 
