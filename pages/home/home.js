@@ -9,7 +9,7 @@ const boxes = document.querySelectorAll('.box');
 let currentBoxIndex = 0;
 
 // Function to animate text letter by letter
-function typeWriter(text, element, delay = 150) {
+function typeWriter(text, element, delay = 50) {
     let index = 0;
     function addLetter() {
         if (index < text.length) {
@@ -48,7 +48,7 @@ function showBox() {
     // Delay before starting the typewriter effect
     setTimeout(() => {
         // Animate text letter by letter
-        typeWriter(box.getAttribute('data-text'), textElement, 100);
+        typeWriter(box.getAttribute('data-text'), textElement, 50);
 
         // Text fadein delay
         setTimeout(() => {
@@ -82,17 +82,17 @@ function showBox() {
                             } else if (currentBoxIndex < boxes.length) {
                                 showBox();
                             }
-                        }, 200); // Silence delay
+                        }, 100); // Silence delay
                         
                     }, { once: true }); // Event listener
                     
                 }, 200); // Box fadeout delay
 
-            }, 2500); // Text fadeout delay
+            }, 2000); // Text fadeout delay
 
-        }, 1000); // Text fadein delay
+        }, 500); // Text fadein delay
 
-    }, 1200); // Delay before starting the typewriter effect
+    }, 800); // Delay before starting the typewriter effect
 }
 
 // Final box is big svg logo that doesn't disappear

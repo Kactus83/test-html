@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id');
 
-    if (projectId === null || !projects[projectId - 1]) {
+    if (projectId === null || !projects[projectId]) {
         console.error("Projet non trouvé ou ID invalide.");
         return;
     }
