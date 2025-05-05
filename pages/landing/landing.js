@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const scheduleNextBurst = () => {
-        const randomDelay = Math.random() * (15000 - 3000) + 3000;
+        const randomDelay = Math.random() * (20000 - 3000) + 3000;
         setTimeout(createParticleBurst, randomDelay);
     };
 

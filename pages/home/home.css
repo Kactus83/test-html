@@ -117,3 +117,26 @@ nav.visible {
 .no-display {
   display: none; 
 }
+
+.skip-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: var(--primary-color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+.skip-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.skip-button.visible {
+  opacity: 1;
+  pointer-events: auto;
+}

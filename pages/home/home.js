@@ -1,17 +1,51 @@
 /*
-* Cinematic animation of the boxes
-*/
+ * Cinematic animation of the boxes
+ */
 
 // Number of boxes
 const boxes = document.querySelectorAll('.box');
 
+// Skip button
+const skipButton = document.getElementById('skip-button');
+
 // Index for loop
 let currentBoxIndex = 0;
+
+// Flag pour interrompre l’animation
+let skipRequested = false;
+
+// Fonction pour gérer la frappe au clavier (Entrée / Espace)
+function keyHandler(e) {
+    if (e.code === 'Enter' || e.code === 'Space') {
+        e.preventDefault();
+        skipAnimation();
+    }
+}
+
+// Fonction pour passer directement à la fin
+function skipAnimation() {
+    if (skipRequested) return;
+    skipRequested = true;
+
+    // Masquer toutes les boxes restantes
+    boxes.forEach(box => {
+        box.classList.add('hidden', 'no-display');
+    });
+
+    // Cacher le bouton Skip et désactiver les écouteurs
+    skipButton.classList.add('hidden');
+    document.removeEventListener('keydown', keyHandler);
+    skipButton.removeEventListener('click', skipAnimation);
+
+    // Afficher directement la fin
+    showFinalBox();
+}
 
 // Function to animate text letter by letter
 function typeWriter(text, element, delay = 150) {
     let index = 0;
     function addLetter() {
+        if (skipRequested) return;
         if (index < text.length) {
             element.innerHTML += text[index] === ' ' ? '&nbsp;' : text[index];
             index++;
@@ -23,6 +57,12 @@ function typeWriter(text, element, delay = 150) {
 
 // Make box visible one after one
 function showBox() {
+
+    // Afficher et activer le bouton Skip
+    skipButton.classList.remove('no-display', 'hidden');
+    skipButton.classList.add('visible');
+    skipButton.addEventListener('click', skipAnimation);
+    document.addEventListener('keydown', keyHandler);
 
     // Hide pointer
     document.getElementById('cursor').style.opacity = 0;
@@ -77,6 +117,10 @@ function showBox() {
                             currentBoxIndex++;
 
                             // If last box, show final box
+                            if (skipRequested) {
+                                // si on skip, on ne relance pas
+                                return;
+                            }
                             if (currentBoxIndex === boxes.length) {
                                 showFinalBox();
                             } else if (currentBoxIndex < boxes.length) {
